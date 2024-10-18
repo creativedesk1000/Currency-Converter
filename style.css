@@ -1,0 +1,124 @@
+/* Reset default styling */
+body,
+h1,
+h2,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body and text styling */
+body {
+    color: #ffffff;
+    font-family: 'Amiri', serif;
+    background: linear-gradient(135deg, #f50488, #070c99, #e58304, black);
+}
+
+.heading {
+    margin: 20px 0;
+    font-family: 'Lobster', cursive;
+    color: aliceblue;
+}
+
+/* Container styling */
+.container {
+    margin-top: 30px;
+    padding: 20px;
+    /* background-color: #fa076c; */
+    background: linear-gradient(135deg, purple, aqua);
+    border-radius: 10px;
+    box-shadow: 6px 5px 10px 6px rgba(0, 0, 0, 01);
+    position: relative;
+}
+
+.container::after,
+.container::before {
+    --angle: 0deg;
+
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* background-image: conic-gradient(#ff4545, #006aff, #00ff99, #ff0095, #ff4545); */
+    background-image: conic-gradient(from var(--angle), transparent 50%, blue, #00ff99, #ff0095, #ff4545);
+
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 5px;
+    animation: 5s spin linear infinite;
+}
+
+.container::before {
+    filter: blur(2.5rem);
+    opacity: 1;
+
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+.main {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-control option {
+    white-space: nowrap;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background-color: #042d80;
+    border-color: #007bff;
+    color: #ffffff;
+}
+
+.btn-primary.reset {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.text-center {
+    text-align: center;
+}
+
+#finalAmount {
+    margin-top: 20px;
+}
+
+.finalValue {
+    color: green;
+    font-weight: bold;
+}
